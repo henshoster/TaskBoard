@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Task Board</title>
+    <link id="mystyle" rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+
+<body>
+    <div id="addnote-container">
+        <img id="headerimg" src="images/title.png" alt="My Task Board">
+        <form id="addnote-form" onsubmit="return false">
+            <textarea name="tasktodo" id="taskinput" cols="30" rows="4" required placeholder="Type your task here"></textarea>
+            <div>
+                <label for="dateinput">Target date:</label>
+                <input type="date" id="dateinput" required>
+            </div>
+            <div>
+                <label for="timeinput">Target time (optional):</label>
+                <input type="time" id="timeinput" value="00:00">
+            </div>
+            <div id="for-buttons">
+                <input id="addbutton" type="submit" value="Add" onclick="addNote()">
+                <input id="resetbutton" type="reset" value="Reset" onclick="resetFormInputsAndStyle()">
+                <input id="settings" type="button" value="Advanced settings" onclick="openAndCloseSettingsTab()">
+            </div>
+        </form>
+        <div id="alerts"></div>
+        <div id="settingscontainer">
+            <div id="fornotetodisplay">
+                <label for="notesdisplay">Notes to display:</label>
+                <select id="notesdisplay" onchange="changeDisplayNotes(event)">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <div>
+                <label for="sortingnotes">Sort by:</label>
+                <select id="sortingnotes" onchange="changeSorting(event)">
+                    <option value="0">1) Sort by creating date - From first to last</option>
+                    <option value="1">2) Sort by creating date - From last to first</option>
+                    <option value="2">3) Sort by target date - From early to late</option>
+                    <option value="3">4) Sort by target date -From late to early</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="notes-container"></div>
+    <script src="js/constructor.js"></script>
+    <script src="js/assistance_functions.js"></script>
+    <script src="js/dom_access.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>

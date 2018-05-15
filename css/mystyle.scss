@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "Indie Flower", cursive;
+  src: url(../font/IndieFlower.ttf) format("truetype");
+}
+
+body {
+  font-family: "Indie Flower", cursive;
+  background-image: url(../images/tile.jpg);
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  font-size: 12px;
+  .note {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 135px 25px;
+    background-image: url(../images/notebg.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 200px;
+    height: 250px;
+    transition: opacity 1s ease-in-out;
+    .innerDivForText {
+      width: 170px;
+      height: 135px;
+      margin-left: auto;
+      margin-right: 22px;
+      margin-top: 0;
+      margin-bottom: 0;
+      overflow-y: auto;
+      word-wrap: break-word;
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 2;
+    }
+    .innerDivForCurrentDate {
+      margin-top: 30px;
+      margin-left: 2px;
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .innerDivForTargetDate {
+      grid-column: 2;
+      grid-row: 3;
+    }
+    .targetTextDiv {
+      grid-column: 1;
+      grid-row: 3;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+    .removeButton {
+      grid-column: 2;
+      grid-row: 1;
+      padding-right: 3px;
+      padding-left: 3px;
+      margin: auto;
+      margin-top: 30px;
+      opacity: 0;
+
+      &:hover {
+        color: white;
+        background-color: red;
+      }
+    }
+  }
+  .note:hover .removeButton {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+#addnote-container {
+  display: flex;
+  flex-direction: column;
+  #headerimg {
+    margin: auto;
+  }
+  #taskinput {
+    display: block;
+    width: 500px;
+    height: 135px;
+    box-sizing: border-box;
+    background-color: transparent;
+    line-height: 33px;
+  }
+  #addnote-form {
+    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-left: 80px;
+    background-image: url(../images/formbg.jpg);
+    margin: auto;
+  }
+  #alerts {
+    margin: auto;
+    color: red;
+    font-weight: bold;
+    background-color: white;
+    width: 420px;
+    padding: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .not-pass-validation {
+    border: 3px solid red;
+  }
+  select,
+  input,
+  textarea {
+    border: 0;
+    background-color: transparent;
+    font-family: "Indie Flower", cursive;
+    font-size: 16px;
+  }
+  #dateinput,
+  #timeinput {
+    height: 35px;
+    box-sizing: border-box;
+  }
+  #for-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 110px;
+    #addbutton,
+    #resetbutton {
+      border: 2px solid black;
+      border-radius: 10px;
+      margin-bottom: 2px;
+      width: 100px;
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+    #settings {
+      border: 2px solid black;
+      border-radius: 10px;
+      margin-bottom: 2px;
+      z-index: 1;
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+  #settingscontainer {
+    background-image: url(../images/formbg.jpg);
+    margin: auto;
+    width: 580px;
+    height: 50px;
+    display: none;
+    div {
+      margin-left: 80px;
+    }
+    #fornotetodisplay {
+      margin-bottom: 6px;
+      margin-top: -13px;
+    }
+  }
+}

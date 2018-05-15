@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Indie Flower", cursive;
+  src: url(../font/IndieFlower.ttf) format("truetype");
+}
+
+body {
+  font-family: "Indie Flower", cursive;
+  background-image: url(../images/tile.jpg);
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  font-size: 12px;
+}
+
+#notes-container .note {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50px 135px 25px;
+  background-image: url(../images/notebg.png);
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 200px;
+  height: 250px;
+  transition: opacity 1s ease-in-out;
+}
+
+#notes-container .note .innerDivForText {
+  width: 170px;
+  height: 135px;
+  margin-left: auto;
+  margin-right: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow-y: auto;
+  word-wrap: break-word;
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+}
+
+#notes-container .note .innerDivForCurrentDate {
+  margin-top: 30px;
+  margin-left: 2px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#notes-container .note .innerDivForTargetDate {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#notes-container .note .targetTextDiv {
+  grid-column: 1;
+  grid-row: 3;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+#notes-container .note .removeButton {
+  grid-column: 2;
+  grid-row: 1;
+  padding-right: 3px;
+  padding-left: 3px;
+  margin: auto;
+  margin-top: 30px;
+  opacity: 0;
+}
+
+#notes-container .note .removeButton:hover {
+  color: white;
+  background-color: red;
+}
+
+#notes-container .note:hover .removeButton {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#addnote-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#addnote-container #headerimg {
+  margin: auto;
+}
+
+#addnote-container #taskinput {
+  display: block;
+  width: 500px;
+  height: 135px;
+  box-sizing: border-box;
+  background-color: transparent;
+  line-height: 33px;
+}
+
+#addnote-container #addnote-form {
+  padding-bottom: 15px;
+  padding-top: 12px;
+  padding-left: 80px;
+  background-image: url(../images/formbg.jpg);
+  margin: auto;
+}
+
+#addnote-container #alerts {
+  margin: auto;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 420px;
+  padding: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#addnote-container .not-pass-validation {
+  border: 3px solid red;
+}
+
+#addnote-container select,
+#addnote-container input,
+#addnote-container textarea {
+  border: 0;
+  background-color: transparent;
+  font-family: "Indie Flower", cursive;
+  font-size: 16px;
+}
+
+#addnote-container #dateinput,
+#addnote-container #timeinput {
+  height: 35px;
+  box-sizing: border-box;
+}
+
+#addnote-container #for-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 110px;
+}
+
+#addnote-container #for-buttons #addbutton,
+#addnote-container #for-buttons #resetbutton {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  width: 100px;
+}
+
+#addnote-container #for-buttons #addbutton:hover,
+#addnote-container #for-buttons #resetbutton:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#addnote-container #for-buttons #settings {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  z-index: 1;
+}
+
+#addnote-container #for-buttons #settings:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#addnote-container #settingscontainer {
+  background-image: url(../images/formbg.jpg);
+  margin: auto;
+  width: 580px;
+  height: 50px;
+  display: none;
+}
+
+#addnote-container #settingscontainer div {
+  margin-left: 80px;
+}
+
+#addnote-container #settingscontainer #fornotetodisplay {
+  margin-bottom: 6px;
+  margin-top: -13px;
+}
+/*# sourceMappingURL=mystyle.css.map */
