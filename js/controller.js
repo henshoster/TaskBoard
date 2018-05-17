@@ -11,14 +11,14 @@ var sortingValue;
 if (localStorage.getItem("sortingvalue") != null) {
   sortingValue = JSON.parse(localStorage.getItem("sortingvalue"));
 } else {
-  sortingValue = 0;
+  sortingValue = "0";
 }
 
 var howManyNotesInPage;
 if (localStorage.getItem("numberofnotes") != null) {
   howManyNotesInPage = JSON.parse(localStorage.getItem("numberofnotes"));
 } else {
-  howManyNotesInPage = 4;
+  howManyNotesInPage = "4";
 }
 
 // create page notes after initial settings load
